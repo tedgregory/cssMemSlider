@@ -1,0 +1,117 @@
+@import "reset.css";
+
+:root {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: azure;
+  margin: 0px;
+  padding: 0px;
+  font-size: 10px;
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.slider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.slider__box {
+  width: 100%;
+  max-width: 600px;
+  height: 400px;
+  margin: 20px;
+  text-align: center;
+  border-radius: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.slider__slides {
+  display: flex;
+  overflow-x: scroll;
+  position: relative;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+}
+
+.slide {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  width: 100%;
+  height: 400px;
+  margin-right: 0px;
+  box-sizing: border-box;
+  background: white;
+  transform-origin: center center;
+  transform: scale(1);
+  scroll-snap-align: center;
+}
+
+.slide__image {
+  width: 100%;
+}
+
+.slide__text {
+  font: 1.3rem Arial, Verdana, sans-serif;
+}
+
+.slider__nav {
+  box-sizing: border-box;
+  display: flex;
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+  margin-left: -100px;
+  text-align: center;
+}
+
+.slider__nav label {
+  position: relative;
+  cursor: pointer;
+  padding:10px;
+}
+
+.slider__nav input {
+  opacity: 1;
+  font-size: 0px;
+}
+.slider__nav input:checked + label {
+  background-color: black;
+}
+
+.slider__navlink {
+  pointer-events: visible;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.slider__navlink span {
+  display: block;
+  height: 9px;
+  width: 9px;
+  border-radius: 50%;
+  background-color: #134c4c;
+  border: 3px solid #134c4c;
+  transition: all 0.3s;
+}
+
+.slider__navlink:hover span {
+  border-color: red;
+}
+
+.slider__navlink:active span {
+  background-color: white;
+}

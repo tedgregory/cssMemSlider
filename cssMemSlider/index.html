@@ -1,12 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <link rel="stylesheet" href="style/main.css">
+  <title>CSS Slider by tedgregory</title>
 </head>
+
 <body>
-  
+  <main class="slider">
+    <div class="slider__box">
+      <div class="slider__slides">
+        <div id="slides__1" class="slide">
+          <img src="assets/atest.jpg" alt="Passed test" class="slide__image">
+          <p class="slide__text">This feels good. go on...</p>
+        </div>
+        <div id="slides__2" class="slide">
+          <img src="assets/doggy.jpg" alt="Helium dog" class="slide__image">
+          <p class="slide__text">Push the ceiling to the next...</p>
+        </div>
+        <div id="slides__3" class="slide">
+          <img src="assets/canadian.jpg" alt="Canadians work" class="slide__image">
+          <p class="slide__text">Work hard to hit the goal...</p>
+        </div>
+        <div id="slides__4" class="slide">
+          <img src="assets/ruffday.jpg" alt="Relax dog" class="slide__image">
+          <p class="slide__text">To get a perfect relax!</p>
+        </div>
+      </div>
+      <form class="slider__nav">
+        <input type="radio" id="nav1" name="nav">
+        <label for="nav1"><button class="slider__navlink" formaction="#slides__1"><span></span></button></label>
+        <input type="radio" id="nav2" name="nav">
+        <label for="nav2"><button class="slider__navlink" formaction="#slides__2"><span></span></button></label>
+        <input type="radio" id="nav3" name="nav">
+        <label for="nav3"><button class="slider__navlink" formaction="#slides__3"><span></span></button></label>
+        <input type="radio" id="nav4" name="nav">
+        <label for="nav4"><button class="slider__navlink" formaction="#slides__4"><span></span></button></label>
+      </form>
+    </div>
+  </main>
 </body>
+
 </html>
