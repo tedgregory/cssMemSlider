@@ -15,10 +15,10 @@ body {
 }
 
 h1 {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Amaranth', Arial, Helvetica, sans-serif;
   font-size: 1.1rem;
   font-weight: 700;
-  color: #eee;
+  color: #00171f;
   text-align: center;
   line-height: 1.5rem;
   text-shadow: 0 0 .5rem #aaa;
@@ -86,7 +86,7 @@ input[type="radio"] {
 }
 
 .slide__text {
-  font: 0.885rem Arial, sans-serif;
+  font: 0.885rem  Arial, sans-serif;
   width: 0;
   visibility: hidden;
   overflow:hidden;
