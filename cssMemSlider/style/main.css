@@ -3,13 +3,25 @@
 :root {
   scroll-behavior: smooth;
   box-sizing: border-box;
+  --slider-width: 60vw;
 }
 
 body {
   background-color: #eee;
-  background-image:linear-gradient(to bottom, rgba(0,0,0,0.1), transparent);
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), transparent);
   margin: 0;
   padding: 0;
+  height: 100vh;
+}
+
+h1 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #eee;
+  text-align: center;
+  line-height: 1.5rem;
+  text-shadow: 0 0 .5rem #aaa;
 }
 
 .slider {
@@ -21,12 +33,12 @@ body {
   justify-content: center;
   border-radius: 1rem;
   background-color: #00171f;
-  margin: 2vh auto;
-  width: 60vw;
+  margin: 0 auto;
+  width: var(--slider-width);
   padding: 2vw 3vw;
   max-height: 95vh;
   box-shadow: 0 .5rem 1rem #011f29;
-  background-image: linear-gradient(180deg, rgba(0,0,0,0.5), transpagent);
+  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.5), transpagent);
 }
 
 input[type="radio"] {
@@ -44,7 +56,6 @@ input[type="radio"] {
 .slider__slides {
   display: flex;
   gap: 10vw;
-  position: relative;
   scroll-behavior: smooth;
   transition: all .5s;
 }
@@ -59,7 +70,7 @@ input[type="radio"] {
 }
 
 .slide__image {
-  width: 60vw;
+  width: var(--slider-width);
 }
 
 .slider__texts {
@@ -76,11 +87,12 @@ input[type="radio"] {
 
 .slide__text {
   font: 0.885rem Arial, sans-serif;
+  width: 0;
+  visibility: hidden;
+  overflow:hidden;
   opacity: 0;
   transform: scale(0%);
-  width: 0;
-  height: 0;
-  transition: all .3s;
+  transition: all .4s;
 }
 
 .slider__nav {
@@ -93,7 +105,6 @@ input[type="radio"] {
 }
 
 .slider__nav label {
-  position: relative;
   pointer-events: visible;
   cursor: pointer;
   padding: .6rem;
@@ -159,31 +170,31 @@ input[type="radio"] {
 
 /* texts switching */
 #nav1:checked~* .slider__texts .slide__text:nth-child(1) {
+  visibility: visible;
   opacity: 1;
-  transform: scale(100%);
-  width: auto;
-  height: auto;
+  transform: scale(1);
+  width:100%;
 }
 
 #nav2:checked~* .slider__texts .slide__text:nth-child(2) {
+  visibility: visible;
   opacity: 1;
-  transform: scale(100%);
-  width: auto;
-  height: auto;
+  transform: scale(1);
+  width:100%;
 }
 
 #nav3:checked~* .slider__texts .slide__text:nth-child(3) {
+  visibility: visible;
   opacity: 1;
-  transform: scale(100%);
-  width: auto;
-  height: auto;
+  transform: scale(1);
+  width:100%;
 }
 
 #nav4:checked~* .slider__texts .slide__text:nth-child(4) {
+  visibility: visible;
   opacity: 1;
-  transform: scale(100%);
-  width: auto;
-  height: auto;
+  transform: scale(1);
+  width:100%;
 }
 
 /* adaptive */
@@ -193,11 +204,7 @@ input[type="radio"] {
     grid-template-columns: 1fr;
   }
 
-  .slider__nav {
-    justify-content: center;
-  }
-
-  .slider__texts {
+  .slider__nav, .slider__texts {
     justify-content: center;
   }
 }
