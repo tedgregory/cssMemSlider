@@ -7,34 +7,38 @@
 
 body {
   background-color: #8e9aaf;
-  margin: 0px;
-  padding: 0px;
-  font-size: 10px;
+  margin: 0;
+  padding: 0;
 }
 
 .slider {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  display: grid;
+  grid-template-areas:
+    "slider slider"
+    "text nav";
   justify-content: center;
-  height: 100%;
+  border-radius: 1rem;
+  background-color: #00171f;
+  margin: 2vh auto;
+  width: 60vw;
+  padding: 2vw 3vw;
+  max-height: 95vh;
 }
 
-.slider input {
-  display:none;
+input[type="radio"] {
+  display: none;
 }
 
 .slider__box {
-  width: 90%;
-  margin-top: 5vh;
+  grid-area: slider;
   border-radius: 1rem;
   overflow: hidden;
+  box-shadow: 0 0 0 0.5rem #1d3658;
 }
 
 .slider__slides {
-  width: 100%;
   display: flex;
-  gap:10vw;
+  gap: 10vw;
   position: relative;
   scroll-behavior: smooth;
   transition: all .5s;
@@ -46,33 +50,45 @@ body {
   justify-content: center;
   align-items: center;
   background: white;
-  width:100%;
-  max-height:80vh;
+  width: 100%;
 }
 
 .slide__image {
-  width: 90vw;
+  display: block;
+  width: 60vw;
 }
 
-.slide__text {
+.slider__texts {
+  grid-area: text;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
   transition: all 0.5s;
-  font: 1.3rem Arial, Verdana, sans-serif;
+  font: 2vh Arial, Verdana, sans-serif;
+  color: azure;
+  margin-top:1rem;
+  height: 5vh;
+  overflow: hidden;
+}
+
+.slider__texts p {
+  opacity: 0;
+  transform: scale(0%);
+  width: 0;
+  transition: all .3s;
 }
 
 .slider__nav {
+  grid-area: nav;
   display: flex;
-  justify-content: center;
-  gap: 1em;
-  text-align: center;
+  justify-content: flex-end;
+  align-items: center;
+  gap: .5rem;
+  margin-top:1rem;
 }
 
 .slider__nav label {
   position: relative;
-  cursor: pointer;
-  padding: 10px;
-}
-
-.slider__nav label {
   pointer-events: visible;
   cursor: pointer;
   padding: .6rem;
@@ -80,50 +96,93 @@ body {
 
 .slider__nav label span {
   display: block;
-  height: 1rem;
-  width: 1rem;
+  height: 1vw;
+  width: 1vw;
   border-radius: 50%;
-  background-color: #134c4c;
-  border: .2rem solid #134c4c;
+  background-color: #e8c468;
+  border: .2rem solid #e8c468;
   transition: all 0.3s;
 }
 
 .slider__nav label:hover span {
-  border-color: red;
+  border-color: #e6bc16;
+  background-color: #e6bc16;
 }
 
 .slider__nav label:active span {
   background-color: white;
+  border-color: white;
 }
+
 /* label styling */
-.slider input#nav1:checked~.slider__nav label:nth-child(1) {
-  background-color: black;
+#nav1:checked~* .slider__nav label:nth-child(1) span {
+  background-color: transparent;
+  border-color: #e8c468;
 }
 
-.slider input#nav2:checked~.slider__nav label:nth-child(2) {
-  background-color: black;
+#nav2:checked~* .slider__nav label:nth-child(2) span {
+  background-color: transparent;
+  border-color: #e8c468;
 }
 
-.slider input#nav3:checked~.slider__nav label:nth-child(3) {
-  background-color: black;
+#nav3:checked~* .slider__nav label:nth-child(3) span {
+  background-color: transparent;
+  border-color: #e8c468;
 }
 
-.slider input#nav4:checked~.slider__nav label:nth-child(4) {
-  background-color: black;
+#nav4:checked~* .slider__nav label:nth-child(4) span {
+  background-color: transparent;
+  border-color: #e8c468;
 }
 
 /* slides switching */
-.slider input#nav1:checked~*> .slider__slides {
+#nav1:checked~* .slider__slides {
   transform: translateX(0%);
 }
-.slider input#nav2:checked~*> .slider__slides {
-  transform: translateX(-100vw);
-}
-.slider input#nav3:checked~*> .slider__slides {
-  transform: translateX(-200vw);
-}
-.slider input#nav4:checked~*> .slider__slides {
-  transform: translateX(-300vw);
+
+#nav2:checked~* .slider__slides {
+  transform: translateX(-70vw);
 }
 
+#nav3:checked~* .slider__slides {
+  transform: translateX(-140vw);
+}
 
+#nav4:checked~* .slider__slides {
+  transform: translateX(-210vw);
+}
+
+/* texts switching */
+#nav1:checked~* .slider__texts p:nth-child(1) {
+  opacity: 1;
+  transform: scale(100%);
+  width: 100%;
+}
+
+#nav2:checked~* .slider__texts p:nth-child(2) {
+  opacity: 1;
+  transform: scale(100%);
+  width: 100%;
+}
+
+#nav3:checked~* .slider__texts p:nth-child(3) {
+  opacity: 1;
+  transform: scale(100%);
+  width: 100%;
+}
+
+#nav4:checked~* .slider__texts p:nth-child(4) {
+  opacity: 1;
+  width: 100%;
+  transform: scale(100%);
+}
+
+/* adaptive */
+@media screen and (max-width: 767px) {
+  .slider {
+    grid-template-areas: "slider""nav""text";
+  }
+  .slider__nav {
+    justify-content: center;
+  }
+}
