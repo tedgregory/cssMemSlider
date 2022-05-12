@@ -12,39 +12,36 @@
 
 <body>
   <main class="slider">
+    <input type="radio" id="nav1" name="nav" checked>
+    <input type="radio" id="nav2" name="nav">
+    <input type="radio" id="nav3" name="nav">
+    <input type="radio" id="nav4" name="nav">
     <div class="slider__box">
       <div class="slider__slides">
         <div id="slides__1" class="slide">
-          <input type="radio" id="nav1" name="nav" checked>
           <img src="assets/atest.jpg" alt="Passed test" class="slide__image">
           <p class="slide__text">This feels good. go on...</p>
         </div>
         <div id="slides__2" class="slide">
-          <input type="radio" id="nav2" name="nav">
           <img src="assets/doggy.jpg" alt="Helium dog" class="slide__image">
           <p class="slide__text">Push the ceiling to the next...</p>
         </div>
         <div id="slides__3" class="slide">
-          <input type="radio" id="nav3" name="nav">
           <img src="assets/canadian.jpg" alt="Canadians work" class="slide__image">
           <p class="slide__text">Work hard to hit the goal...</p>
         </div>
         <div id="slides__4" class="slide">
-          <input type="radio" id="nav4" name="nav">
           <img src="assets/ruffday.jpg" alt="Relax dog" class="slide__image">
           <p class="slide__text">To get a perfect relax!</p>
         </div>
       </div>
-      <form class="slider__nav">
-        <input type="radio" id="nav1" name="nav">
-        <label for="nav1"><button class="slider__navlink" formaction="#slides__1"><span></span></button></label>
-        <input type="radio" id="nav2" name="nav">
-        <label for="nav2"><button class="slider__navlink" formaction="#slides__2"><span></span></button></label>
-        <input type="radio" id="nav3" name="nav">
-        <label for="nav3"><button class="slider__navlink" formaction="#slides__3"><span></span></button></label>
-        <input type="radio" id="nav4" name="nav">
-        <label for="nav4"><button class="slider__navlink" formaction="#slides__4"><span></span></button></label>
-      </form>
+
+    </div>
+    <div class="slider__nav">
+      <label for="nav1"><span></span></label>
+      <label for="nav2"><span></span></label>
+      <label for="nav3"><span></span></label>
+      <label for="nav4"><span></span></label>
     </div>
   </main>
 </body>
