@@ -23,6 +23,7 @@ body {
   width: 60vw;
   padding: 2vw 3vw;
   max-height: 95vh;
+  box-shadow: 0 .5rem 1rem #00171f;
 }
 
 input[type="radio"] {
@@ -33,7 +34,8 @@ input[type="radio"] {
   grid-area: slider;
   border-radius: 1rem;
   overflow: hidden;
-  box-shadow: 0 0 0 0.5rem #1d3658;
+  box-shadow: 0 0 0 0.1rem #032631;
+  background: #032631;
 }
 
 .slider__slides {
@@ -64,14 +66,14 @@ input[type="radio"] {
   justify-content: flex-start;
   align-items: center;
   transition: all 0.5s;
-  font: 2vh Arial, Verdana, sans-serif;
   color: azure;
-  margin-top:1rem;
+  margin-top: 1rem;
   height: 5vh;
   overflow: hidden;
 }
 
-.slider__texts p {
+.slide__text {
+  font: 2.2vh Arial, sans-serif;
   opacity: 0;
   transform: scale(0%);
   width: 0;
@@ -84,7 +86,7 @@ input[type="radio"] {
   justify-content: flex-end;
   align-items: center;
   gap: .5rem;
-  margin-top:1rem;
+  margin-top: 1rem;
 }
 
 .slider__nav label {
@@ -153,28 +155,32 @@ input[type="radio"] {
 }
 
 /* texts switching */
-#nav1:checked~* .slider__texts p:nth-child(1) {
+#nav1:checked~* .slider__texts .slide__text:nth-child(1) {
   opacity: 1;
   transform: scale(100%);
-  width: 100%;
+  width: auto;
+  height: auto;
 }
 
-#nav2:checked~* .slider__texts p:nth-child(2) {
+#nav2:checked~* .slider__texts .slide__text:nth-child(2) {
   opacity: 1;
   transform: scale(100%);
-  width: 100%;
+  width: auto;
+  height: auto;
 }
 
-#nav3:checked~* .slider__texts p:nth-child(3) {
+#nav3:checked~* .slider__texts .slide__text:nth-child(3) {
   opacity: 1;
   transform: scale(100%);
-  width: 100%;
+  width: auto;
+  height: auto;
 }
 
-#nav4:checked~* .slider__texts p:nth-child(4) {
+#nav4:checked~* .slider__texts .slide__text:nth-child(4) {
   opacity: 1;
-  width: 100%;
   transform: scale(100%);
+  width: auto;
+  height: auto;
 }
 
 /* adaptive */
@@ -182,7 +188,12 @@ input[type="radio"] {
   .slider {
     grid-template-areas: "slider""nav""text";
   }
+
   .slider__nav {
+    justify-content: center;
+  }
+
+  .slider__texts {
     justify-content: center;
   }
 }
