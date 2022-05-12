@@ -6,7 +6,8 @@
 }
 
 body {
-  background-color: #8e9aaf;
+  background-color: #eee;
+  background-image:linear-gradient(to bottom, rgba(0,0,0,0.1), transparent);
   margin: 0;
   padding: 0;
 }
@@ -16,6 +17,7 @@ body {
   grid-template-areas:
     "slider slider"
     "text nav";
+  grid-template-columns: 1fr 1fr;
   justify-content: center;
   border-radius: 1rem;
   background-color: #00171f;
@@ -23,7 +25,8 @@ body {
   width: 60vw;
   padding: 2vw 3vw;
   max-height: 95vh;
-  box-shadow: 0 .5rem 1rem #00171f;
+  box-shadow: 0 .5rem 1rem #011f29;
+  background-image: linear-gradient(180deg, rgba(0,0,0,0.5), transpagent);
 }
 
 input[type="radio"] {
@@ -34,7 +37,7 @@ input[type="radio"] {
   grid-area: slider;
   border-radius: 1rem;
   overflow: hidden;
-  box-shadow: 0 0 0 0.1rem #032631;
+  box-shadow: 0.1rem 0.1rem 0.1rem #032631, -0.1rem -0.1rem 0.1rem #00171f;
   background: #032631;
 }
 
@@ -56,7 +59,6 @@ input[type="radio"] {
 }
 
 .slide__image {
-  display: block;
   width: 60vw;
 }
 
@@ -73,10 +75,11 @@ input[type="radio"] {
 }
 
 .slide__text {
-  font: 2.2vh Arial, sans-serif;
+  font: 0.885rem Arial, sans-serif;
   opacity: 0;
   transform: scale(0%);
   width: 0;
+  height: 0;
   transition: all .3s;
 }
 
@@ -187,6 +190,7 @@ input[type="radio"] {
 @media screen and (max-width: 767px) {
   .slider {
     grid-template-areas: "slider""nav""text";
+    grid-template-columns: 1fr;
   }
 
   .slider__nav {
