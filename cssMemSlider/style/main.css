@@ -127,6 +127,7 @@ input[type="radio"] {
 .slider__nav label:hover span {
   border-color: #e6bc16;
   background-color: #e6bc16;
+  transform:scale(120%);
 }
 
 .slider__nav label:active span {
@@ -153,6 +154,22 @@ input[type="radio"] {
 #nav4:checked~* .slider__nav label:nth-child(4) span {
   background-color: transparent;
   border-color: #e8c468;
+}
+/* label EXTRA styling */
+#nav1:checked~* .slider__nav label:nth-child(1):hover span {
+  border-color: #e6bc16;
+}
+
+#nav2:checked~* .slider__nav label:nth-child(2):hover span {
+  border-color: #e6bc16;
+}
+
+#nav3:checked~* .slider__nav label:nth-child(3):hover span {
+  border-color: #e6bc16;
+}
+
+#nav4:checked~* .slider__nav label:nth-child(4):hover span {
+  border-color: #e6bc16;
 }
 
 /* slides switching */
