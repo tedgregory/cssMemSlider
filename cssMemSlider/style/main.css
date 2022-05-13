@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Amaranth&display=swap');
 @import "reset.css";
 
 :root {
@@ -8,7 +10,9 @@
 
 body {
   background-color: #eee;
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), transparent);
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), transparent) scroll;
+  background-size: cover;
+  background-position-x: center;
   margin: 0;
   padding: 0;
   height: 100vh;
@@ -29,16 +33,17 @@ h1 {
   grid-template-areas:
     "slider slider"
     "text nav";
+    gap: .5rem;
   grid-template-columns: 1fr 1fr;
-  justify-content: center;
-  border-radius: 1rem;
-  background-color: #00171f;
   margin: 0 auto;
   width: var(--slider-width);
-  padding: 2vw 3vw;
+  padding: 2vw;
   max-height: 95vh;
-  box-shadow: 0 .5rem 1rem #011f29;
-  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.5), transpagent);
+  box-shadow: 0 .2rem .5rem #011f29;
+  background-image: linear-gradient(45deg, rgba(0, 0, 0, 0.2), transparent);
+  border-radius: 1vw;
+  background-color: #00171f;
+  border: .1rem solid #e8c468;
 }
 
 input[type="radio"] {
@@ -47,9 +52,9 @@ input[type="radio"] {
 
 .slider__box {
   grid-area: slider;
-  border-radius: 1rem;
+  border-radius: 1vw;
   overflow: hidden;
-  box-shadow: 0.1rem 0.1rem 0.1rem #032631, -0.1rem -0.1rem 0.1rem #00171f;
+  box-shadow: 0 0 0.1rem #e8c468;
   background: #032631;
 }
 
@@ -65,7 +70,6 @@ input[type="radio"] {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: white;
   width: 100%;
 }
 
@@ -79,20 +83,20 @@ input[type="radio"] {
   justify-content: flex-start;
   align-items: center;
   transition: all 0.5s;
-  color: azure;
-  margin-top: 1rem;
+  color: #e8c468;
   height: 5vh;
   overflow: hidden;
 }
 
 .slide__text {
-  font: 0.885rem  Arial, sans-serif;
+  font: italic 0.885rem  'PT Sans', Arial, sans-serif;
   width: 0;
   visibility: hidden;
   overflow:hidden;
   opacity: 0;
   transform: scale(0%);
   transition: all .4s;
+  text-shadow: 0 0 .2rem #000;
 }
 
 .slider__nav {
@@ -101,13 +105,12 @@ input[type="radio"] {
   justify-content: flex-end;
   align-items: center;
   gap: .5rem;
-  margin-top: 1rem;
 }
 
 .slider__nav label {
   pointer-events: visible;
   cursor: pointer;
-  padding: .6rem;
+  padding: .5rem;
 }
 
 .slider__nav label span {
@@ -117,6 +120,7 @@ input[type="radio"] {
   border-radius: 50%;
   background-color: #e8c468;
   border: .2rem solid #e8c468;
+  box-shadow: .2rem .2rem .5rem black, -.2rem -.2rem .5rem #05303d;
   transition: all 0.3s;
 }
 
@@ -204,7 +208,7 @@ input[type="radio"] {
     grid-template-columns: 1fr;
   }
 
-  .slider__nav, .slider__texts {
+  .slider__nav {
     justify-content: center;
   }
 }
