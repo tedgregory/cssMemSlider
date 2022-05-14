@@ -58,6 +58,7 @@ input[type="radio"] {
   overflow: hidden;
   box-shadow: 0 0 0.1rem #e8c468;
   background: #032631;
+  max-height: 80vh;
 }
 
 .slider__slides {
